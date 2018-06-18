@@ -1,0 +1,121 @@
+#map {
+	width: 100%;
+	height: 100%;
+}
+
+.ol-control {
+	z-index: 10;
+}
+
+.overpass {
+	top: 5em;
+	left: 0.5em;
+	z-index: 10 !important;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.bbox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+
+	&-resize,
+	&-move {
+		position: absolute;
+		z-index: 9;
+	}
+
+	&-move {
+		cursor: grab;
+	}
+
+	&-resize {
+		width: 10px;
+		height: 10px;
+		border: 1px solid #000;
+		background-color: #fff;
+		cursor: move;
+	}
+
+	&-layout {
+		background-color: rgba(0, 0, 0, 0.5);
+		position: absolute;
+	}
+
+	&-top,
+	&-bottom {
+		width: 100%;
+	}
+	&-right,
+	&-left {
+		height: 100%;
+	}
+
+	&-top {
+		top: 0;
+	}
+	&-bottom {
+		bottom: 0;
+	}
+	&-right {
+		right: 0;
+	}
+	&-left {
+		left: 0;
+	}
+}
+
+.ol-popup {
+	position: absolute;
+	background-color: white;
+	-webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+	filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+	padding: 15px;
+	border-radius: 10px;
+	border: 1px solid #cccccc;
+	bottom: 12px;
+	left: -50px;
+	min-width: 280px;
+}
+
+.ol-popup:after,
+.ol-popup:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.ol-popup:after {
+	border-top-color: white;
+	border-width: 10px;
+	left: 48px;
+	margin-left: -10px;
+}
+
+.ol-popup:before {
+	border-top-color: #cccccc;
+	border-width: 11px;
+	left: 48px;
+	margin-left: -11px;
+}
+
+.ol-popup-closer {
+	text-decoration: none;
+	position: absolute;
+	top: 2px;
+	right: 8px;
+}
+
+.ol-popup-closer:after {
+	content: "✖";
+}

@@ -1,0 +1,22 @@
+{
+    "port": 8002,
+    "watch": {
+        "enable": false,
+        "port": 9721,
+        "debounce": 200,
+        "reglob": 2000,
+        "globPatterns": "./static/**/*",
+        "reloader": {
+            "code": true,
+            "component": true,
+            "page": true,
+            "style": true
+        }
+    },
+    "ssl": {
+        "enable": false,
+        "privateKey": "./config/cert.pem",
+        "certificate": "./config/key.pem",
+        "passphrase": ""
+    }
+}

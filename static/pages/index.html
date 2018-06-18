@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>НКР - Вашуркин А.В.</title>
+		<link href="https://fonts.googleapis.com/css?family=Lato:100,300,700|Open+Sans&amp;subset=latin-ext" rel="stylesheet">
+		<link href="/css/reset.css" rel="stylesheet">
+		<link href="/css/interface.less" rel="stylesheet">
+		<!-- https://openlayers.org/en/latest/examples/permalink.html#map=2/0/0/0 -->
+		<link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+		<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+		<script src="https://openlayers.org/en/v4.6.5/build/ol.js"></script>
+		<script src="/js/vendor/hammer.min.js"></script>
+		<script src="/js/vendor/d3-timer.min.js"></script>
+		<script src="/js/vendor/ajax.min.js"></script>
+	</head>
+	<body>
+	<% if((config.debug && config.debug.enable) || (config.watch && config.watch.enable)){ %>
+		<script>
+			window.SERVER_CONFIG = <%- JSON.stringify(config, null, 4) %>;
+		</script>
+	<% } %>
+
+	<% if(config.watch && config.watch.enable){ %>
+		<% if(config.watch.reloader && config.watch.reloader.code){ %>
+			<script type="application/javascript" src="/js/dev/code-reloader.js"></script>
+		<% } %>
+		<% if(config.watch.reloader && config.watch.reloader.page){ %>
+			<script type="application/javascript" src="/js/dev/page-reloader.js"></script>
+		<% } %>
+		<% if(config.watch.reloader && config.watch.reloader.style){ %>
+			<script type="application/javascript" src="/js/dev/style-reloader.js"></script>
+		<% } %>
+	<% } %>
+		<div id="map"></div>
+		<div class="ol-popup">
+			<a href="#" class="ol-popup-closer popup-closer"></a>
+			<div class="popup-content"></div>
+		</div>
+
+		<script src="/js/utils.js"></script>
+		<script src="/js/openlayers.js"></script>
+		<script src="/js/ajax.js"></script>
+		<script src="/js/overpass.js"></script>
+		<script src="/js/balloon.js"></script>
+		<script src="/js/bbox.js"></script>
+		<script src="/lib/geo.js"></script>
+		<script src="/lib/graph.js"></script>
+		<script src="/lib/convert-to-graph.js"></script>
+	</body>
+</html>
